@@ -1,4 +1,3 @@
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 if("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(success, error);
