@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 exports.handler = async (event, context) => {
   const { latitude, longitude } = event.queryStringParameters;
   const apiKey = process.env.OPENWEATHER_API_KEY; // Access the Netlify environment variable
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=<span class="math-inline">\{latitude\}&lon\=</span>{longitude}&units=metric&appid=${apiKey}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
 
   try {
     const response = await fetch(apiUrl);
